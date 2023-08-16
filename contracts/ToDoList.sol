@@ -27,4 +27,16 @@ contract ToDoList {
         task.completed = true;
         emit TaskCompleted(_id);
     }
+
+    function getTaskCount() public view returns (uint256) {
+        return s_taskCount;
+    }
+
+    function getTask(uint256 _id) public view returns (Task memory) {
+        require(_id <= s_taskCount, "Task not found");
+        return tasks[_id - 1];
+    }
+
+    // The Task memory in the function's return type means that the function will return a Task struct that is stored in memory. The use of memory here indicates that the returned Task struct is temporary and only exists for the duration of the function call.
+    // This is a good practice because it prevents unnecessary modification of the contract's state when retrieving data. Since you're only reading data from the tasks array, using memory helps optimize gas costs and ensures that the contract's state remains unchanged.
 }

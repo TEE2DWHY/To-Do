@@ -40,3 +40,5 @@ contract ToDoList {
     // The Task memory in the function's return type means that the function will return a Task struct that is stored in memory. The use of memory here indicates that the returned Task struct is temporary and only exists for the duration of the function call.
     // This is a good practice because it prevents unnecessary modification of the contract's state when retrieving data. Since you're only reading data from the tasks array, using memory helps optimize gas costs and ensures that the contract's state remains unchanged.
 }
+
+// contract is deployed at : https://goerli.etherscan.io/address/0x1056a8080cFadeAE728446939a3e5eCE4936369c
